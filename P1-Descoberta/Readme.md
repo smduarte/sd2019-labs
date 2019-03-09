@@ -28,8 +28,7 @@ Pretende-se implementar a descoberta de serviços na rede local, na modalidade d
 Analise o código da classe `Discovery`, e complete a implementação do método `findUrisOf`, destinado
 a ser usado por aplicações cliente. 
 
-No pacote `http` apresenta-se um exemplo de utilização da classe `Discovery`, onde um cliente HTTP antes de realizar um pedido, <br>obtém o URI de contato
-do servidor HTTP, usando o método `findUrisOf` a completar.
+No pacote `http` apresenta-se um exemplo de utilização da classe `Discovery`, onde um cliente HTTP antes de realizar um pedido, <br>obtém o URI de contato do servidor HTTP, usando o método `findUrisOf` a completar.
 
 Na sua implementação, tenha em conta os seguintes aspetos:
 
