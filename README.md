@@ -32,12 +32,10 @@ Confirmar que os projectos estão selecionados e carregar em Finish.
 ##### Alternativa 2 - Obter código e importar manualmente:
 
 - Obter o código directamente do repositório. Para isto existem duas formas:
-
-1. Descarregar o Zip do código manualmente: Abrir a página do repositório num browser e carregar em *Clone or Download -> Download Zip*. De seguida extrair para uma pasta à escolha.
-
-2. Utilizando o Git, executar o comando: `git clone https://github.com/smduarte/sd2019-labs`
-- Abrir o Eclipse num workspace à escolha
-- Carregar em *File* -> *Import...*
-- Escolher a opção *General* -> *Existing Projects into Workspace*. Carregar em *Next >*
-- Em *Select root directory*, escolher a pasta para onde o repositório foi descarregado.
-- No campo *Projects:* deverá aparecer a lista dos projectos encontrados. Confirmar que estão selecionados e carregar em *Finish*
+ 1. Descarregar o Zip do código manualmente: Abrir a página do repositório num browser e carregar em *Clone or Download -> Download Zip*. De seguida extrair para uma pasta à escolha.
+ 2. Utilizando o Git, executar o comando: `git clone https://github.com/smduarte/sd2019-labs`
+ - Abrir o Eclipse num workspace à escolha
+ - Carregar em *File* -> *Import...*
+ - Escolher a opção *General* -> *Existing Projects into Workspace*. Carregar em *Next >*
+ - Em *Select root directory*, escolher a pasta para onde o repositório foi descarregado.
+ - No campo *Projects:* deverá aparecer a lista dos projectos encontrados. Confirmar que estão selecionados e carregar em *Finish*
