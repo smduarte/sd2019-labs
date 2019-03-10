@@ -10,7 +10,7 @@ Podem utilizar qualquer IDE com que se sintam à vontade, no entando os docentes
 
 #### Como importar o código base:
 
-O código base das aulas práticas está disponível em https://github.com/smduarte/sd2019-labs. 
+O código base das aulas práticas está disponível em https://github.com/smduarte/sd2019-labs
 
 Existem várias formas de importar este código (e eventualmente importar o código base dos projectos) para um workspace do Eclipse:
 
