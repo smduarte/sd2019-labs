@@ -17,6 +17,7 @@ contendo a informação de contacto.<br>O cliente, quando deseja descobrir um se
 endereço e porto pré-acordado, até receber a informação de contacto procurada, ou até achar que deve desistir. 
 
 Na outra modalidade, os papeis invertem-se. Os servidores escutam o canal e respondem aos pedidos de contato iniciados pelos clientes.<br>
+
 Tendo em conta que a comunicação não é fiável, os clientes estão obrigados a re-enviar o pedido de descoberta várias vezes até
 obter resposta ou, na falta desta, até poderem concluir que que o serviço não está disponível.
 
@@ -28,8 +29,7 @@ Pretende-se implementar a descoberta de serviços na rede local, na modalidade d
 Analise o código da classe `Discovery`, e complete a implementação do método `findUrisOf`, destinado
 a ser usado por aplicações cliente. 
 
-No pacote `http` apresenta-se um exemplo de utilização da classe `Discovery`, onde um cliente HTTP antes de realizar um pedido, <br>obtém o URI de contato
-do servidor HTTP, usando o método `findUrisOf` a completar.
+No pacote `http` apresenta-se um exemplo de utilização da classe `Discovery`, onde um cliente HTTP antes de realizar um pedido, <br>obtém o URI de contato do servidor HTTP, usando o método `findUrisOf` a completar.
 
 Na sua implementação, tenha em conta os seguintes aspetos:
 
