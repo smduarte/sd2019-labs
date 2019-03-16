@@ -28,6 +28,9 @@ public class RestMediaResources implements RestMediaStorage {
 		try {
 			String id = Hash.of(bytes); // Compute an quasi-unique hash of the contents of the data and use it as its id/filename
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
+			if( filename.exists() )
+				throw new WebApplicationException( Status.CONFLICT);
+			
 			Files.write(filename.toPath(), bytes);
 			return baseUri + "/" + id;
 		} catch( Exception x  ) { 

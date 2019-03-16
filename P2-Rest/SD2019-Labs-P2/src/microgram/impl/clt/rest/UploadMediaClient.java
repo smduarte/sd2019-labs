@@ -10,6 +10,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import org.glassfish.jersey.client.ClientConfig;
 
@@ -34,9 +35,11 @@ public class UploadMediaClient {
 				.accept(MediaType.APPLICATION_JSON)
 				.post(Entity.entity(bytes, MediaType.APPLICATION_OCTET_STREAM));
 
-		System.out.println("Status: " + r.getStatus() );
-		if( r.hasEntity() )
+		if( r.getStatus() == Status.OK.getStatusCode() && r.hasEntity() )
 			System.out.println("Response: " + r.readEntity(String.class ) );
+		else
+			System.out.println("Status: " + r.getStatus() );
+
 	}
 
 }
