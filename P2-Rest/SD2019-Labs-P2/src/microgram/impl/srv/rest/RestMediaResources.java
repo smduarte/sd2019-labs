@@ -1,6 +1,7 @@
 package microgram.impl.srv.rest;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.util.logging.Logger;
 
@@ -33,7 +34,7 @@ public class RestMediaResources implements RestMediaStorage {
 			
 			Files.write(filename.toPath(), bytes);
 			return baseUri + "/" + id;
-		} catch( Exception x  ) { 
+		} catch( IOException x  ) { 
 			x.printStackTrace();
 			throw new WebApplicationException( Status.INTERNAL_SERVER_ERROR);
 		}
