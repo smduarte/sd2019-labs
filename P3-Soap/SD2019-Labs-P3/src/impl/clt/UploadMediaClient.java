@@ -22,7 +22,7 @@ public class UploadMediaClient {
 	
 	public static void main(String[] args) throws IOException {
 		
-		String serverUrl = args.length > 0 ? args[0] : String.format("http://localhost:%s/soap", MediaSoapServer.PORT);
+		String serverUrl = args.length > 0 ? args[0] : String.format("http://localhost:%s/soap/%s", MediaSoapServer.PORT, SoapMedia.NAME);
 
 		
 		QName QNAME = new QName(SoapMedia.NAMESPACE, SoapMedia.NAME);		

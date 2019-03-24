@@ -19,11 +19,11 @@ public class RestMediaResources extends RestResource implements RestMediaStorage
 	
 	@Override
 	public String upload(byte[] bytes) {
-		Result<String> result = impl.upload( bytes );
-		if( result.isOK() )
+		Result<String> result = impl.upload(bytes);
+		if (result.isOK())
 			return baseUri + "/" + result.value();
 		else
-			throw new WebApplicationException( super.statusCode( result )) ;
+			throw new WebApplicationException(super.statusCode(result));
 	}
 
 	@Override

@@ -1,4 +1,5 @@
 package impl.srv.shared;
+
 import static microgram.api.java.Result.error;
 import static microgram.api.java.Result.ErrorCode.INTERNAL_ERROR;
 import static microgram.api.java.Result.ErrorCode.NOT_FOUND;
@@ -14,23 +15,23 @@ public class JavaMedia implements Media {
 
 	private static final String MEDIA_EXTENSION = ".jpg";
 	private static final String ROOT_DIR = "/tmp/microgram/";
-	
+
 	public JavaMedia() {
-		new File( ROOT_DIR ).mkdirs();
+		new File(ROOT_DIR).mkdirs();
 	}
-	
+
 	@Override
 	public Result<String> upload(byte[] bytes) {
 		try {
 			String id = Hash.of(bytes);
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
-			
-			if( filename.exists() )
-				return Result.error( NOT_FOUND );
-			
+
+			if (filename.exists())
+				return Result.error(NOT_FOUND);
+
 			Files.write(filename.toPath(), bytes);
 			return Result.ok(id);
-		} catch( Exception x  ) { 
+		} catch (Exception x) {
 			x.printStackTrace();
 			return error(INTERNAL_ERROR);
 		}
@@ -40,13 +41,13 @@ public class JavaMedia implements Media {
 	public Result<byte[]> download(String id) {
 		try {
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
-			if( filename.exists())
-				return Result.ok(Files.readAllBytes( filename.toPath() ));
+			if (filename.exists())
+				return Result.ok(Files.readAllBytes(filename.toPath()));
 			else
 				return Result.error(NOT_FOUND);
-		} catch( Exception x ) {
+		} catch (Exception x) {
 			x.printStackTrace();
 			return Result.error(INTERNAL_ERROR);
 		}
- 	}
+	}
 }
