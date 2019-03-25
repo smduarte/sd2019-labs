@@ -1,6 +1,7 @@
 package impl.srv.shared;
 
 import static microgram.api.java.Result.error;
+import static microgram.api.java.Result.ErrorCode.CONFLICT;
 import static microgram.api.java.Result.ErrorCode.INTERNAL_ERROR;
 import static microgram.api.java.Result.ErrorCode.NOT_FOUND;
 
@@ -27,7 +28,7 @@ public class JavaMedia implements Media {
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
 
 			if (filename.exists())
-				return Result.error(NOT_FOUND);
+				return Result.error(CONFLICT);
 
 			Files.write(filename.toPath(), bytes);
 			return Result.ok(id);
