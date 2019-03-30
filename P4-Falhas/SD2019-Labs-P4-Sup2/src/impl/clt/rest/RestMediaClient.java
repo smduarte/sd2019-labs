@@ -20,6 +20,7 @@ public class RestMediaClient extends RestClient implements Media {
 
 	public Result<String> upload(byte[] bytes) {
 		return super.reTry(() -> _upload_v1(bytes));
+		//return super.reTry(() -> _upload_v2(bytes));
 	}
 
 	public Result<byte[]> download(String url) {
