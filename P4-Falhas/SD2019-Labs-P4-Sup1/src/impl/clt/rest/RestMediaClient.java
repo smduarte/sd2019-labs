@@ -12,25 +12,23 @@ import microgram.api.java.Result;
 import microgram.api.rest.RestMediaStorage;
 
 public class RestMediaClient extends RestClient implements Media {
-	
+
 	public RestMediaClient(URI mediaStorage) {
-		super( mediaStorage, RestMediaStorage.PATH);
+		super(mediaStorage, RestMediaStorage.PATH);
 	}
 
 	public Result<String> upload(byte[] bytes) {
-		Response r = super.target.request()
-				.accept(MediaType.APPLICATION_JSON)
+		Response r = super.target.request().accept(MediaType.APPLICATION_JSON)
 				.post(Entity.entity(bytes, MediaType.APPLICATION_OCTET_STREAM));
 
-		if( r.getStatusInfo().equals( Status.OK ) )
-			return Result.ok(r.readEntity( String.class ) );
+		if (r.getStatusInfo().equals(Status.OK))
+			return Result.ok(r.readEntity(String.class));
 		else
-			return Result.error( super.errorCode( r.getStatus() ) );
+			return Result.error(super.errorCode(r.getStatus()));
 	}
 
 	public Result<byte[]> download(String url) {
 		throw new RuntimeException("Not Implemented");
 	}
-		
-		
+
 }

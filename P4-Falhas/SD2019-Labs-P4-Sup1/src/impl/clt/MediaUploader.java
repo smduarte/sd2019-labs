@@ -27,7 +27,7 @@ public class MediaUploader {
 			if (uri.isOK())
 				Log.info("Upload completed: " + uri);
 			else
-				Log.info("Upload failed, reason: " + uri.error() );
+				Log.info("Upload failed, reason: " + uri.error());
 		}
 	}
 }

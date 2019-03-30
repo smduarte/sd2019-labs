@@ -14,28 +14,33 @@ abstract class SoapClient {
 
 	protected final Service service;
 
-	protected SoapClient( URI uri, QName qname ) {
-		this.service = Service.create( this.wsdlFrom( uri ), qname);
+	protected SoapClient(URI uri, QName qname) {
+		this.service = Service.create(this.wsdlFrom(uri), qname);
 	}
-	
-	//Translates the MicrogramException into an ErrorCode
+
+	// Translates the MicrogramException into an ErrorCode
 	static protected ErrorCode errorCode(MicrogramException me) {
 		switch (me.getMessage()) {
-			case "OK": return ErrorCode.OK;
-			case "CONFLICT" : return ErrorCode.CONFLICT;
-			case "NOT_FOUND": return ErrorCode.NOT_FOUND;
-			case "INTERNAL_ERROR": return ErrorCode.INTERNAL_ERROR;
-			case "NOT_IMPLEMENTED": return ErrorCode.NOT_IMPLEMENTED;
-			default:
+		case "OK":
+			return ErrorCode.OK;
+		case "CONFLICT":
+			return ErrorCode.CONFLICT;
+		case "NOT_FOUND":
+			return ErrorCode.NOT_FOUND;
+		case "INTERNAL_ERROR":
+			return ErrorCode.INTERNAL_ERROR;
+		case "NOT_IMPLEMENTED":
+			return ErrorCode.NOT_IMPLEMENTED;
+		default:
 			return ErrorCode.INTERNAL_ERROR;
 		}
 	}
-	
-	protected URL wsdlFrom( URI uri ) {
+
+	protected URL wsdlFrom(URI uri) {
 		try {
-			return new URL( uri.toString() + WSDL );
-		} catch( Exception x ) {
-			throw new RuntimeException(x.getMessage() );
+			return new URL(uri.toString() + WSDL);
+		} catch (Exception x) {
+			throw new RuntimeException(x.getMessage());
 		}
 	}
 }
