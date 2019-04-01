@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-import javax.xml.ws.WebServiceException;
 
 import impl.srv.soap.SoapMediaStorageServer;
 import microgram.api.soap.MicrogramException;
@@ -14,8 +13,8 @@ import microgram.api.soap.SoapMedia;
 
 public class DownloadMediaClient {
 	// timeouts in ms
-	static final int SOAP_CONN_TIMEOUT = 5000;
-	static final int SOAP_RECV_TIMEOUT = 4000;
+	static final int SOAP_CONN_TIMEOUT = 10000;
+	static final int SOAP_RECV_TIMEOUT = 2000;
 
 	private static Logger Log = Logger.getLogger(DownloadMediaClient.class.getName());
 
@@ -37,9 +36,7 @@ public class DownloadMediaClient {
 
 		} catch (MicrogramException x) {
 			Log.info("Download failed, reason: " + x.getMessage());
-		} catch (WebServiceException x) {
-			Log.info("IO Error...");
-		}
+		} 
 	}
 
 }
