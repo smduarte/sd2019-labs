@@ -36,7 +36,6 @@ public class JavaMedia implements MediaStorage {
 			Files.write(filename.toPath(), bytes);
 			return Result.ok(id);
 		} catch (Exception x) {
-			x.printStackTrace();
 			return error(INTERNAL_ERROR);
 		}
 	}
@@ -50,7 +49,6 @@ public class JavaMedia implements MediaStorage {
 			else
 				return Result.error(NOT_FOUND);
 		} catch (Exception x) {
-			x.printStackTrace();
 			return Result.error(INTERNAL_ERROR);
 		}
 	}
