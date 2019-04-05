@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sd2019</groupId>
-	<artifactId>sd19-p5-tester</artifactId>
+	<artifactId>sd19-p5-testes</artifactId>
 	<version>1.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<googledrive>/Volumes/GoogleDrive/My Drive/CAMPUS-ROOT/SD2019/jupyter/public-html</googledrive>
-		<authors>smd</authors>
+		<authors>XXXXX-YYYYY</authors>
 		<dockerfile-maven-version>1.4.10</dockerfile-maven-version>
 	</properties>
 	<repositories>
@@ -21,13 +21,6 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
-	<distributionManagement>
-        <repository>
-            <id>sd19</id>
-            <url>file://${googledrive}/mvn-repo</url>
-        </repository>
-    </distributionManagement>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
