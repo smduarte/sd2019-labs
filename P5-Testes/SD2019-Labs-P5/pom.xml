@@ -7,7 +7,7 @@
 	<version>1.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<authors>XXXXX-YYYYY</authors>
+		<authors>xxxxx-yyyyy</authors>
 		<dockerfile-maven-version>1.4.10</dockerfile-maven-version>
 	</properties>
 	<repositories>
