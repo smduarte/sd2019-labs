@@ -26,7 +26,6 @@ public class JavaMedia implements MediaStorage {
 
 	@Override
 	public Result<String> upload(byte[] bytes) {
-		
 		try {
 			String id = Hash.of(bytes);
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
@@ -44,7 +43,6 @@ public class JavaMedia implements MediaStorage {
 
 	@Override
 	public Result<byte[]> download(String id) {
-
 		try {
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
 			if (filename.exists())
@@ -57,7 +55,7 @@ public class JavaMedia implements MediaStorage {
 		}
 	}
 	
-	
+	@Override
 	public Result<Void> delete(String id) {
 		throw new RuntimeException("Not implemented...");	
 	}
