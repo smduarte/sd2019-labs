@@ -1,0 +1,17 @@
+posts-rest-service-mainclass=
+posts-rest-service-port=
+
+profiles-rest-service-mainclass=
+profiles-rest-service-port=
+
+mediastorage-rest-service-mainclass=microgram.impl.srv.rest.RestMediaStorageServer
+mediastorage-rest-service-port=9999
+
+posts-soap-service-mainclass=
+posts-soap-service-port=
+
+profiles-soap-service-mainclass=
+profiles-soap-service-port=
+
+discovery-multicast-address=226.226.226.226:2266
+
