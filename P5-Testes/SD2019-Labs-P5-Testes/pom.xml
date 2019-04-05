@@ -7,7 +7,6 @@
 	<version>1.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<googledrive>/Volumes/GoogleDrive/My Drive/CAMPUS-ROOT/SD2019/jupyter/public-html</googledrive>
 		<authors>XXXXX-YYYYY</authors>
 		<dockerfile-maven-version>1.4.10</dockerfile-maven-version>
 	</properties>
