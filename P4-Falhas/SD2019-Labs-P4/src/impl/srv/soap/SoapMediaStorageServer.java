@@ -22,6 +22,7 @@ public class SoapMediaStorageServer {
 	public static final String SERVICE = "Microgram-MediaStorage";
 	public static String SOAP_BASE_PATH = "/soap/" + SoapMedia.NAME;
 
+	@SuppressWarnings("restriction")
 	public static void main(String[] args) throws Exception {
 
 		// Create an HTTP server, accepting requests at PORT (from all local interfaces)
