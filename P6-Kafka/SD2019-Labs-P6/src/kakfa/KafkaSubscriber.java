@@ -6,7 +6,6 @@ import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 public class KafkaSubscriber {
@@ -35,7 +34,7 @@ public class KafkaSubscriber {
 		Properties props = new Properties();
 
 		// Localização dos servidores kafka (lista de máquinas + porto)
-		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092, kafka:9092");
+		props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092, kafka:9092");
 
 		// Configura o modo de subscrição (ver documentação em kafka.apache.org)
 		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");

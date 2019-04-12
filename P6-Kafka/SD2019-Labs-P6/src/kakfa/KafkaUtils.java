@@ -1,9 +1,8 @@
 package kakfa;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.kafka.clients.admin.AdminClient;
@@ -34,9 +33,9 @@ public class KafkaUtils {
 	}
 
 	static private AdminClient create() {
-		Map<String, Object> conf = new HashMap<>();
-		conf.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-		conf.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, "5000");
-		return AdminClient.create(conf);
+		Properties props = new Properties();
+		props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+		props.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, "5000");
+		return AdminClient.create(props);
 	}
 }

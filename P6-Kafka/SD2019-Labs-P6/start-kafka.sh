@@ -10,11 +10,11 @@ fi
 
 docker pull smduarte/sd19-kafka
 
-echo "Launching Kafka Server: " + $1
+echo "Launching Kafka Server: "  $1
 
 docker rm -f kafka
 
 docker run -h $1  \
            --name=kafka \
-		   --network=sd-net \
+	   --network=sd-net \
            --rm -t  -p 9092:9092 -p 2181:2181 smduarte/sd19-kafka
