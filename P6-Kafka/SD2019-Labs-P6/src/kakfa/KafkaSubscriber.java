@@ -13,15 +13,13 @@ public class KafkaSubscriber {
 	private static final long POLL_TIMEOUT = 1L;
 
 	final KafkaConsumer<String, String> consumer;
-	final SubscriberListener listener;
 
-	public KafkaSubscriber(List<String> topics, SubscriberListener listener) {
-		this.listener = listener;
+	public KafkaSubscriber(List<String> topics) {
 		this.consumer = getConsumer();
 		this.consumer.subscribe(topics);
 	}
 
-	public void start() {
+	public void consume(SubscriberListener listener) {
 		for (;;) {
 			consumer.poll(Duration.ofSeconds(POLL_TIMEOUT)).forEach(r -> {
 				listener.onReceive(r.topic(), r.key(), r.value());
