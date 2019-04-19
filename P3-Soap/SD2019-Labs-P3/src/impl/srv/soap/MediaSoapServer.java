@@ -1,6 +1,7 @@
 package impl.srv.soap;
 
 import java.net.InetSocketAddress;
+import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
 import javax.xml.ws.Endpoint;
@@ -33,6 +34,9 @@ public class MediaSoapServer {
 
 		// Publish the SOAP webservice, under the "http://<ip>:<port>/soap"
 		soapEndpoint.publish(server.createContext(SOAP_BASE_PATH));
+
+		// Provide an executor to create threads as needed...
+		server.setExecutor(Executors.newCachedThreadPool());
 
 		// Start Serving Requests: both SOAP Requests
 		server.start();
