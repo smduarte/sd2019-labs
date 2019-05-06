@@ -66,7 +66,7 @@ public class DropboxClient
 	private static final String LIST_FOLDER_V2_URL = "https://api.dropboxapi.com/2/files/list_folder";
 	private static final String LIST_FOLDER_CONTINUE_V2_URL = "https://api.dropboxapi.com/2/files/list_folder/continue";
 	private static final String CREATE_FILE_V2_URL = "https://content.dropboxapi.com/2/files/upload";
-	private static final String DELETE_FILE_V2_URL = "https://api.dropboxapi.com/2/file_requests/delete";
+	private static final String DELETE_FILE_V2_URL = "https://api.dropboxapi.com/2/files/delete";
 	private static final String DOWNLOAD_FILE_V2_URL = "https://content.dropboxapi.com/2/files/download";
 
 	private static final String DROPBOX_API_ARG = "Dropbox-API-Arg";
@@ -218,7 +218,9 @@ public class DropboxClient
 	 * @param bytes Contents of the file.
 	 */
 	public Result<String> upload(String filename, byte[] bytes) {
-		// TODO: TO BE COMPLETED
+		
+		
+		
 		return Result.error(Result.ErrorCode.NOT_IMPLEMENTED);
 	}
 
@@ -240,7 +242,7 @@ public class DropboxClient
 	 * 
 	 * @param filename File name.
 	 */
-	public Result<Void> delete(String id) {
+	public Result<Void> delete(String filename) {
 		// TODO: TO BE COMPLETED
 		return Result.error(Result.ErrorCode.NOT_IMPLEMENTED);
 	}
