@@ -31,4 +31,9 @@ public class RestMediaClient extends RestClient implements Media {
 		throw new RuntimeException("Not Implemented");
 	}
 
+	@Override
+	public Result<Void> delete(String id) {
+		throw new RuntimeException("Not Implemented");
+	}
+
 }

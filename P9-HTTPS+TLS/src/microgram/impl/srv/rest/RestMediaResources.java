@@ -1,16 +1,18 @@
-package impl.srv.rest;
+package microgram.impl.srv.rest;
+
+import java.util.logging.Logger;
 
 import javax.ws.rs.WebApplicationException;
 
-import impl.srv.shared.JavaMedia;
-import microgram.api.java.Media;
 import microgram.api.java.Result;
 import microgram.api.rest.RestMediaStorage;
 
 public class RestMediaResources extends RestResource implements RestMediaStorage {
+	private static Logger Log = Logger.getLogger(RestMediaResources.class.getName());
+
 	
-	final Media impl;
 	final String baseUri;
+	final JavaMedia impl;
 	
 	public RestMediaResources(String baseUri ) {
 		this.baseUri = baseUri + RestMediaStorage.PATH;
@@ -37,8 +39,10 @@ public class RestMediaResources extends RestResource implements RestMediaStorage
 
 	@Override
 	public void delete(String id) {
-		Result<Void> results  = impl.delete ( id );
-		if ( ! results.isOK() )
-			throw new WebApplicationException( super.statusCode( results ) ) ;
+		Result<Void> result = impl.delete( id );
+		if( ! result.isOK() )
+			throw new WebApplicationException( super.statusCode( result )) ;
 	}
+	
+	
 }

@@ -3,11 +3,10 @@ package microgram.impl.srv.rest;
 import java.net.URI;
 import java.util.logging.Logger;
 
+import javax.net.ssl.SSLContext;
+
 import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-
-import microgram.impl.srv.rest.utils.GenericExceptionMapper;
-import microgram.impl.srv.rest.utils.PrematchingRequestFilter;
 import utils.IP;
 
 
@@ -21,7 +20,7 @@ public class RestMediaStorageServer {
 	
 	public static final int PORT = 9999;
 	public static final String SERVICE = "Microgram-MediaStorage";
-	public static String SERVER_BASE_URI = "http://%s:%s/rest";
+	public static String SERVER_BASE_URI = "https://%s:%s/rest";
 	
 	public static void main(String[] args) throws Exception {
 
@@ -31,10 +30,10 @@ public class RestMediaStorageServer {
 		ResourceConfig config = new ResourceConfig();
 
 		config.register(new RestMediaResources(serverURI));
-		config.register(new PrematchingRequestFilter());
-		config.register(new GenericExceptionMapper());
+		//config.register(new PrematchingRequestFilter());
+		//config.register(new GenericExceptionMapper());
 		
-		JdkHttpServerFactory.createHttpServer( URI.create(serverURI.replace(ip, "0.0.0.0")), config);
+		JdkHttpServerFactory.createHttpServer( URI.create(serverURI.replace(ip, "0.0.0.0")), config, SSLContext.getDefault());
 
 		Log.info(String.format("%s Server ready @ %s\n",  SERVICE, serverURI));
 	}

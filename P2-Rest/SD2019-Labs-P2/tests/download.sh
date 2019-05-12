@@ -5,4 +5,4 @@ if [[ $# -eq 0 ]] ; then
     exit 1
 fi
 
-curl -4 -v -X GET $1
+curl -4 -v -X GET $1 -o image.jpg

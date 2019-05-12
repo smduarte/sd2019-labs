@@ -44,4 +44,9 @@ public class RestMediaClient extends RestClient implements Media {
 		return super.responseContents(r, Status.OK, new GenericType<String>() {
 		});
 	}
+
+	@Override
+	public Result<Void> delete(String id) {
+		throw new RuntimeException("Not Implemented...");
+	}
 }
