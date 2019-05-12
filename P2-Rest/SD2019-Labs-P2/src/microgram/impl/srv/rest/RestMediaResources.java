@@ -45,4 +45,11 @@ public class RestMediaResources implements RestMediaStorage {
 		Log.info("download request for: id");
 		throw new WebApplicationException(Status.NOT_IMPLEMENTED );
  	}
+
+	@Override
+	public void delete(String id) {
+		Log.info("delete request for: id");
+		throw new WebApplicationException(Status.NOT_IMPLEMENTED );
+	}
+	
 }

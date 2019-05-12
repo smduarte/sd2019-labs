@@ -34,4 +34,11 @@ public class RestMediaResources extends RestResource implements RestMediaStorage
 		else
 			throw new WebApplicationException( super.statusCode( result )) ;
  	}
+
+	@Override
+	public void delete(String id) {
+		Result<Void> result = impl.delete(id);
+		if(! result.isOK())
+			throw new WebApplicationException( super.statusCode ( result )) ;
+	}
 }

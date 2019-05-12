@@ -28,7 +28,7 @@ public class JavaMedia implements Media {
 	public Result<String> upload(byte[] bytes) {
 		
 		try {
-			Thread.sleep(2000 + random.nextInt(5000));
+			//Thread.sleep(2000 + random.nextInt(5000));
 			
 			String id = Hash.of(bytes);
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
@@ -48,12 +48,27 @@ public class JavaMedia implements Media {
 	public Result<byte[]> download(String id) {
 
 		try {
-			Thread.sleep(2000 + random.nextInt(5000));
+			//Thread.sleep(2000 + random.nextInt(5000));
 
 			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
 			if (filename.exists())
 				return Result.ok(Files.readAllBytes(filename.toPath()));
 			else
+				return Result.error(NOT_FOUND);
+		} catch (Exception x) {
+			x.printStackTrace();
+			return Result.error(INTERNAL_ERROR);
+		}
+	}
+	
+	@Override
+	public Result<Void> delete(String id) {
+		try {
+			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
+			if(!filename.exists()) {
+				Files.delete(filename.toPath());
+				return Result.ok();
+			} else
 				return Result.error(NOT_FOUND);
 		} catch (Exception x) {
 			x.printStackTrace();

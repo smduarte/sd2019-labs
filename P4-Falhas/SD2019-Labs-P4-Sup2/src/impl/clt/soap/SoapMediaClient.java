@@ -28,4 +28,9 @@ public class SoapMediaClient extends SoapClient implements Media {
 		throw new RuntimeException("Not Implemented...");
 	}
 
+	@Override
+	public Result<Void> delete(String id) {
+		throw new RuntimeException("Not Implemented...");
+	}
+
 }

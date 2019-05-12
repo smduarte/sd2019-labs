@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>sd2019</groupId>
-	<artifactId>sd19-p5-testes</artifactId>
+	<artifactId>SD2019-Labs-P9</artifactId>
 	<version>1.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<authors>12345-54321</authors>
+		<authors>00001</authors>
 		<dockerfile-maven-version>1.4.10</dockerfile-maven-version>
 	</properties>
 	<repositories>
@@ -68,12 +68,17 @@
 				</executions>
 				<configuration>
 					<contextDirectory>${project.basedir}</contextDirectory>
-					<repository>sd19-p5-${authors}</repository>
+					<repository>sd19-p9-${authors}</repository>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
+		<dependency>
+			<groupId>sd2019</groupId>
+			<artifactId>sd19-tp1-api</artifactId>
+			<version>1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>

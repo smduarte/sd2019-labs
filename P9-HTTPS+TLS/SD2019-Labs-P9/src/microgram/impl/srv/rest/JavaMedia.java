@@ -1,4 +1,4 @@
-package impl.srv.shared;
+package microgram.impl.srv.rest;
 
 import static microgram.api.java.Result.error;
 import static microgram.api.java.Result.ErrorCode.CONFLICT;
@@ -7,16 +7,19 @@ import static microgram.api.java.Result.ErrorCode.NOT_FOUND;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.Random;
 
-import microgram.api.java.Media;
+import microgram.api.java.MediaStorage;
 import microgram.api.java.Result;
 import utils.Hash;
 
-public class JavaMedia implements Media {
+public class JavaMedia implements MediaStorage {
 
 	private static final String MEDIA_EXTENSION = ".jpg";
 	private static final String ROOT_DIR = "/tmp/microgram/";
 
+	static final Random random = new Random();
+	
 	public JavaMedia() {
 		new File(ROOT_DIR).mkdirs();
 	}
@@ -33,7 +36,6 @@ public class JavaMedia implements Media {
 			Files.write(filename.toPath(), bytes);
 			return Result.ok(id);
 		} catch (Exception x) {
-			x.printStackTrace();
 			return error(INTERNAL_ERROR);
 		}
 	}
@@ -47,23 +49,12 @@ public class JavaMedia implements Media {
 			else
 				return Result.error(NOT_FOUND);
 		} catch (Exception x) {
-			x.printStackTrace();
 			return Result.error(INTERNAL_ERROR);
 		}
 	}
-
+	
 	@Override
 	public Result<Void> delete(String id) {
-		try {
-			File filename = new File(ROOT_DIR + id + MEDIA_EXTENSION);
-			if(!filename.exists()) {
-				Files.delete(filename.toPath());
-				return Result.ok();
-			} else
-				return Result.error(NOT_FOUND);
-		} catch (Exception x) {
-			x.printStackTrace();
-			return Result.error(INTERNAL_ERROR);
-		}
+		throw new RuntimeException("Not implemented...");	
 	}
 }
